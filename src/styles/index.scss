@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "reset";
+@import "global";
+html,
+body {
+  background-color: var(--backgound);
+  font-size: 16px;
+  
+}
+.swiper {
+  &-button {
+    &-disabled {
+      display: none;
+    }
+  }
+}
+.anim-appear {
+    opacity: 0;
+}
+
+.anim-appear.anim-appear-active {
+      opacity: 1;
+      transition: opacity .3s linear;
+  }
+.swiper-slide-next{
+@media (max-width: 768px) {
+    opacity: 0.5;
+  }
+}

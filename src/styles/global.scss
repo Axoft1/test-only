@@ -1,0 +1,42 @@
+:root {
+  --font-famili-main: PT Sans;
+  --font-famili-year: Bebas Neue;
+
+  --font-size-xs: 14px;
+  --font-line-xs: normal;
+  --font-xs: 400 var(--font-size-xs) / var(--font-line-xs)
+    var(--font-famili-main);
+
+  --font-size-xsY: 14px;
+  --font-line-xsY: normal;
+  --font-xsY: 400 var(--font-size-xsY) / var(--font-line-xsY)
+    var(--font-famili-year);
+
+  --font-size-s: 20px;
+  --font-line-s: 150%;
+  --font-s:700 var(--font-size-s) / var(--font-line-s) var(--font-famili-main);
+
+  --font-size-m: 25px;
+  --font-line-m: 120%;
+  --font-m:400 var(--font-size-m) / var(--font-line-m) var(--font-famili-year);
+
+  --font-size-l: 56px;
+  --font-line-l: 120%;
+  --font-l: 700 var(--font-size-l) / var(--font-line-l) var(--font-famili-main);
+
+  --font-size-xl: 200px;
+  --font-line-xl: 80%;
+  --font-xl: 700 var(--font-size-xl) / var(--font-line-xl)
+    var(--font-famili-main);
+
+  --black-blue: #42567a;
+  --black-blue-04: #42567a5d;
+  --iris-100: #5d5fef;
+  --fuschia-100: #ef5da8;
+  --blue: #3877ee;
+  --backgound: #f4f5f9;
+  --black-blue-transparent: #42567a25;
+  --white: #ffff;
+  --gray: #303E5880;
+  --blue: #3877EE;
+}

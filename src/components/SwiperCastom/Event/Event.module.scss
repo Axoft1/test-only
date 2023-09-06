@@ -1,0 +1,17 @@
+.year {
+  font: var(--font-m);
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  @media (max-width: 425px) {
+    font: var(--font-xsY);
+  }
+}
+.description {
+  font: var(--font-s);
+  font-weight: 400;
+  color: var(--black-blue);
+  @media (max-width: 425px) {
+    font: var(--font-xs);
+  }
+}

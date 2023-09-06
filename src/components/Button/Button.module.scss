@@ -1,0 +1,45 @@
+.buttonDecrement,
+.buttonIncrement {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(66, 86, 122, 0.5);
+  background-color: var(--backgound);
+  cursor: pointer;
+  background-size: 12.5px;
+  background-position: 45% center;
+  background-image: url('../../images/arrow1.svg');
+  background-repeat: no-repeat;
+  @media (max-width: 768px) {
+    width: 45px;
+    height: 45px;
+    background-size: 11px;
+  }
+  @media (max-width: 425px) {
+    width: 25px;
+    height: 25px;
+    background-size: 6px;
+  }
+  &:hover:not(:disabled) {
+    background-color: var(--white);
+  }
+  &:disabled {
+    border: 1px solid rgba(66, 86, 122, 0.5);
+    background-image: url("../../images/arrow1.svg");
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-position: 45% center;
+  }
+}
+.buttonDecrement::after {
+  left: 55%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.buttonIncrement::after {
+  left: 45%;
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+.buttonIncrement{
+  transform: scaleX(-1);
+}
