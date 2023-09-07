@@ -13,7 +13,7 @@ export default function buildLoaders({
   const cssLoader = {
     test: /\.(s)?css$/,
     use: [
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader:"style-loader" ,
+      isDev ? "style-loader" : MiniCssExtractPlugin.loader ,
       {
         loader: "css-loader",
         options: {
