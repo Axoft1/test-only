@@ -9,11 +9,11 @@ export default function buildLoaders({
     test: /\.tsx?$/,
     use: "ts-loader",
     exclude: /node_modules/,
-  };
+  };  
   const cssLoader = {
-    test: /\.s[ac]ss$/i,
+    test: /\.(s)?css$/,
     use: [
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+      isDev ? "style-loader" : MiniCssExtractPlugin.loader:"style-loader" ,
       {
         loader: "css-loader",
         options: {
@@ -25,14 +25,6 @@ export default function buildLoaders({
           },
         },
       },
-      "sass-loader",
-    ],
-  };
-  const postcssLoader = {
-    test: /\.(s)?css$/,
-    use: [
-      MiniCssExtractPlugin.loader,
-      "css-loader",
       {
         loader: "postcss-loader",
         options: {
@@ -44,5 +36,5 @@ export default function buildLoaders({
       "sass-loader",
     ],
   };
-  return [typescriptLoader, postcssLoader];
+  return [typescriptLoader, cssLoader];
 }
