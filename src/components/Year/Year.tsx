@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface YearProps {
   actualYear: number;
@@ -6,7 +6,7 @@ interface YearProps {
 
 const Year = ({ actualYear }: YearProps):JSX.Element => {
   const [year, setYear] = useState(actualYear);
-  const time = 300 / Math.abs(actualYear - year);
+  const time = 200 / Math.abs(actualYear - year);
 
   const run = useCallback((): void => {
     if (year < actualYear) {
@@ -19,10 +19,10 @@ const Year = ({ actualYear }: YearProps):JSX.Element => {
 
 
   useEffect((): () => void => {
-    const inter = setInterval(():void => run(), time);
     if (year === actualYear) {
-      clearInterval(inter);
+      return
     }
+    const inter = setInterval(():void => run(), time);
     return (): void => clearInterval(inter);
   }, [actualYear, run, time, year]);
 

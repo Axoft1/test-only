@@ -15,18 +15,6 @@ const Main: FC<MainProps> = ({ eventsByYear }): JSX.Element => {
   const nodeRef = useRef<HTMLDivElement>(null);
   const lengthEvent = eventsByYear.length;
 
-  const getPage = (n: number): void => {
-    if (n === 0) {
-      setPage(1);
-      return;
-    }
-    if (n > lengthEvent) {
-      setPage(lengthEvent);
-      return;
-    }
-    setPage(n);
-  };
-
   return (
     <div className={styles.main}>
       <div className={styles.body}>
@@ -79,31 +67,33 @@ const Main: FC<MainProps> = ({ eventsByYear }): JSX.Element => {
             <Button
               direction="prev"
               page={page}
-              getPage={getPage}
+              getPage={setPage}
               length={lengthEvent}
             />
             <Button
               direction="next"
               page={page}
-              getPage={getPage}
+              getPage={setPage}
               length={lengthEvent}
             />
           </div>
         </div>
         <div className={styles.pagination}>
-          {eventsByYear.map((e, i) => (
-            <button
-              key={e.id}
-              disabled={page === i + 1}
-              className={page === i + 1 ? styles.active : ""}
-              onClick={() => getPage(i + 1)}
-            ></button>
-          ))}
+          {eventsByYear.map((e, i) =>{
+            let currentPage = i +1
+            return (
+              <button
+                key={e.id}
+                disabled={page === currentPage}
+                className={page === currentPage ? styles.active : ""}
+                onClick={() => setPage(currentPage)}
+              ></button>
+            );})}
         </div>
       </div>
       <div className={styles.wrapper}>
         {eventsByYear[page - 1] && (
-          <div ref={nodeRef} className="my-node">
+          <div ref={nodeRef}>
             <SwiperCastom event={eventsByYear[page - 1].events} page={page} />
           </div>
         )}

@@ -5,7 +5,6 @@ interface ButtonProps {
   getPage?: (n: number) => void;
   direction: "next" | "prev";
   length?: number;
-  setCsst?: (n: boolean) => void;
 }
 
 const Button = ({
@@ -14,25 +13,20 @@ const Button = ({
   direction,
   length,
 }: ButtonProps): JSX.Element => {
-  function getPageNumber(page: number): void {
-    getPage(page);
-    if (page === 0 || page === length + 1) {
-      return;
-    }
-  }
+  
   return (
     <>
       {direction === "prev" ? (
         <button
           disabled={page === 1}
           className={styles.buttonDecrement}
-          onClick={(): void => getPageNumber(page - 1)}
+          onClick={(): void => getPage(page - 1)}
         ></button>
       ) : (
         <button
           disabled={page === length}
           className={styles.buttonIncrement}
-          onClick={(): void => getPageNumber(page + 1)}
+          onClick={(): void => getPage(page + 1)}
         ></button>
       )}
     </>
